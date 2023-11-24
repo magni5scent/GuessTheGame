@@ -17,8 +17,8 @@ const displayMessage = function(message) {
 check.addEventListener('click', () => {
    const guess = Number(document.querySelector('.guess').value);
 
-   if(!guess) {
-      displayMessage("⛔ No number!");
+   if(!guess || guess < 1 || guess > 25) {
+      displayMessage("⛔ Between 1 and 25!");
    } //When player doesnt input nothing
   
    else if(guess === secretNumber){
