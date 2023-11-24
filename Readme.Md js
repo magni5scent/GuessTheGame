@@ -1,0 +1,18 @@
+Learning js takes a lot of stress! You will be fine.
+Using quotes on consoles makes the variable show itself.
+
+terminologies related to JS;
+
+creating a function = defining a function.
+Running a function = calling a function e.g; addTodo(todoTitle,priority) {
+   they can take more than 1 parameter.
+}
+Passing in a value to a function, they can be a number or a string(they are also called ARGUMENTS).
+
+
+function saveTodo() {
+   localStorage.setItem('todos', JSON.stringify(todos));
+} 
+
+to save files on the local storage you must make sure they are passed in arrays using the JSON.parse input, followed by the IF's statements.
+const saveTodos JSON.parse(localStorage.getItems('todos')); 
