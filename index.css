@@ -134,11 +134,19 @@ html {
   }
 
   .between {
-    font-size: 1.1rem;
+    font-size: 2rem;
     position: absolute;
     top: 1rem;
     right: 1rem;
   }
+
+  .message,
+  .score,
+  .highscore{
+  margin-bottom: 8rem;
+  height: 3rem;
+  margin-right: 6rem;
+}
 
   .again {
     position: absolute;
@@ -185,8 +193,16 @@ html {
     box-sizing: border-box;
   }
 
+  .message,
+  .score,
+  .highscore{
+  margin-bottom: 8rem;
+  height: 3rem;
+  margin-right: 7rem;
+}
+
   .between {
-    font-size: 1.3rem;
+    font-size: 1.9rem;
     position: absolute;
     top: 1.2rem;
     right: 1.3rem;
