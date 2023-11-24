@@ -55,7 +55,7 @@ check.addEventListener('click', () => {
 const reset = document.querySelector('.again');
 
 reset.addEventListener('click', () => {
-   newScore = 30;
+   newScore = 20;
    score.textContent = newScore
    displayMessage('Start guessing...');
    number.textContent = '?';
