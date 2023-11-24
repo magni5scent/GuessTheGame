@@ -5,7 +5,7 @@ const body = document.querySelector('body');
 const score = document.querySelector('.score')
 const number = document.querySelector('.number')
 
-let secretNumber = Math.trunc(Math.random() * 30) + 1;
+let secretNumber = Math.trunc(Math.random() * 25) + 1;
 let newScore = 20;
 let highscore = 0;
 
@@ -16,10 +16,13 @@ const displayMessage = function(message) {
 
 check.addEventListener('click', () => {
    const guess = Number(document.querySelector('.guess').value);
+  
 
-   if(!guess) {
-      displayMessage("⛔ No number!");
-   } //When player doesnt input nothing
+   if(!guess || guess < 1 || guess > 25) {
+      displayMessage("⛔ Between 1 to 25!");
+      newScore--
+      score.textContent = newScore
+   } //When player doesnt input nothing or < or > than expected input
   
    else if(guess === secretNumber){
       displayMessage("🎉 Correct Number")
@@ -59,7 +62,7 @@ reset.addEventListener('click', () => {
    score.textContent = newScore
    displayMessage('Start guessing...');
    number.textContent = '?';
-   secretNumber = Math.trunc(Math.random() * 30) + 1;
+   secretNumber = Math.trunc(Math.random() * 25) + 1;
    document.querySelector('.guess').value = '';
    body.style.backgroundColor = '#222'
    number.style.width = '15rem'
