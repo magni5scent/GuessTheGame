@@ -9,32 +9,6 @@ let secretNumber = Math.trunc(Math.random() * 20) + 1;
 let newScore = 20;
 let highscore = 0;
 
-
-function greaterThan() {
-   if(newScore > 1) {
-      message.textContent =  "Too High, Guess Again 😂"
-   newScore--
-   score.textContent = newScore
-   }
-   else {
-      message.textContent = "You Lost The Game. 😢"
-      score.textContent = 0;
-   }
-}
-
-function lessThan() {
-   if(newScore > 1) {
-      message.textContent = "Too Low.😂"
-   newScore-- 
-   score.textContent = newScore
-   }
-   else {
-      message.textContent = "You Lost The Game. 😢"
-      score.textContent = 0;
-   }
-}
-
-
 check.addEventListener('click', () => {
    const guess = Number(document.querySelector('.guess').value);
 
@@ -52,17 +26,19 @@ check.addEventListener('click', () => {
          highscore = newScore;
          document.querySelector('.highscore').textContent = highscore;
       }
-   } //When player wins
-   else if(guess > secretNumber){
-      greaterThan()
-      //When player picks a number greater than secretnumber
-      
    }
-   else if(guess < secretNumber) {
-   
-      lessThan()
-      //When player picks a number lesser than secretnumber
-   }
+    //When player wins
+    
+    //When player loses
+    else if(guess !== secretNumber){
+      message.textContent = guess > secretNumber ? "Too High, Guess Again 😂" : "You Lost The Game. 😢";
+      newScore--
+      score.textContent = newScore
+      }
+      else {
+         message.textContent = "You Lost The Game. 😢"
+         score.textContent = 0;
+      }
 });
 
 
